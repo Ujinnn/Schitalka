@@ -30,6 +30,7 @@ public class Window3 extends JFrame {
         super("Проверка протокола");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         JPanel pa = new JPanel(new GridLayout(0, 1));
+
 // Створюємо перший блок віконець для вводу тексту
         Box box1 = Box.createHorizontalBox();
         JLabel nameLable = new JLabel("Прізвище:");
@@ -47,6 +48,7 @@ public class Window3 extends JFrame {
         box8.add(gruppLable);
         box8.add(Box.createHorizontalStrut(15));
         box8.add(grupp);
+
 // Створюємо блоки для отримання оцінок за певні категорії
         Box box2 = Box.createHorizontalBox();
         JLabel punkt1 = new JLabel("Загальна грамотність:");
@@ -95,13 +97,6 @@ public class Window3 extends JFrame {
         ok.addActionListener(l1);
         cancel.addActionListener(l1);
 
-// Уточняем размеры компонентов
-//            nameLable.setPreferredSize(gruppLable.getPreferredSize());
-//            p2.setPreferredSize(p3.getPreferredSize());
-//            p4.setPreferredSize(p3.getPreferredSize());
-//            p5.setPreferredSize(p3.getPreferredSize());
-//            p1.setPreferredSize(p3.getPreferredSize());
-// Размещаем три горизонтальные панели на одной вертикальной
         Box mainBox = Box.createVerticalBox();
         mainBox.setBorder(new EmptyBorder(75, 70, 100, 100));
         mainBox.add(box1);
@@ -128,7 +123,7 @@ public class Window3 extends JFrame {
     public class listener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            //           try {
+
             if (e.getSource() == ok) {
                 d1 = Double.parseDouble(p1.getText());
                 d2 = Double.parseDouble(p2.getText());
@@ -148,13 +143,7 @@ public class Window3 extends JFrame {
                 } catch (Exception e1) {
                     JOptionPane.showMessageDialog(null, "Halepa!");
                 }
-
-
             }
-//            }catch (Exception ex) {
-//                JOptionPane.showMessageDialog(null, "Ne tupim, vvodim cifri!");
-
-
         }
     }
 }
